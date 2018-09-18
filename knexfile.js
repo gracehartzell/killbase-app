@@ -6,5 +6,4 @@ development: {
     client: 'pg',
     connection: 'postgres://localhost/assassins_dev'
   },
-  useNullAsDefault: true
 };

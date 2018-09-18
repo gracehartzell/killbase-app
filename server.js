@@ -9,7 +9,7 @@ app.set('view engine','ejs');
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => {
-    res.send('TEXT');
+    res.render('index');
 });
 
 
@@ -17,3 +17,5 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log(`Listening on PORT ${port}`);
 });
+
+module.exports = app;
