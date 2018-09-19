@@ -2,7 +2,7 @@ exports.seed = function(knex) {
     return knex('assassins').del()
         .then(() => {
             return knex('assassins').insert([
-                {photo: 'https://vignette.wikia.nocookie.net/villains/images/0/0a/The_Jackal_5.png/revision/latest?cb=20140430164853',
+                {photo: 'http://images3.static-bluray.com/reviews/2752_5.jpg',
                 full_name: 'Alexander Duggan', 
                 code_name: 'The Jackal', 
                 weapon: 'Sniper rifle', 
@@ -46,7 +46,7 @@ exports.seed = function(knex) {
                 kills: 48, 
                 open_contracts: 3 
             },
-                {photo: 'https://i.ytimg.com/vi/DoOqXrKk8Rw/maxresdefault.jpg',
+                {photo: 'http://ballinnn.com/wp-content/uploads/2018/04/JohnWicksHorribleHair.0.jpg',
                 full_name: 'John Wick', 
                 code_name: 'Baba Yaga', 
                 weapon: 'Lots of guns', 

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Assassins</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+        <%- include('../partials/navbar') %>
+
+    <section>
+        <% assassins.forEach(function(assassins) { %>
+
+        <div class="container py-3">
+            <div class="card">
+            <div class="row ">
+             
+                    <img class="assassinIMG" src= '<%= assassins.photo %>'/>
+           
+                <div class="col-md-8 px-3">
+                    <div class="card-block px-3">
+                    <h2 class="card-title"><%= assassins.full_name || 'Unknown'%></h2>
+                    <h4 class="card-subtitle"><%= assassins.code_name %></h4>
+
+                    <p class="card-text">
+                            <!-- CODE NAME: <%= assassins.code_name %> <br> -->
+                            CONTACT INFO: <%= assassins.contact_info %><br>
+                            AGE: <%= assassins.age %><br>
+                    </p>
+                    <p class="card-text">
+                            WEAPON: <%= assassins.weapon %><br>
+                            PRICE: <%= assassins.price %><br>
+                            RATING: <%= assassins.rating %><br>
+                            KILLS: <%= assassins.kills %><br>
+                            OPEN CONTRACTS: <%= assassins.open_contracts %><br>
+                    </p>
+                    <div id="buttons">
+
+                        <button class="editButton">Edit Assassin</button>
+                        <button class="deleteButton">Delete Assassin</button>
+
+                    </div>
+                    </div>
+                </div>
+        
+                </div>
+            </div>
+            </div>
+        </div>
+        <% })%>
+
+    </section>
+
+    
+
+<a href="newAssassin"> 
+<button id="newAssassinButton">Add New Assassin</button>
+</a>
+
+</body>
+</html>
+
+
+
+
+

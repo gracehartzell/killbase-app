@@ -1,16 +1,16 @@
 exports.up = function(knex) {
     return knex.schema.createTable('assassins', (table) => {
         table.increments('assassins_id').primary();
-        table.string('photo').notNullable();
-        table.string('full_name').nullable();
-        table.string('code_name').nullable();
-        table.string('weapon').notNullable();
-        table.string('contact_info').notNullable();
-        table.integer('age').notNullable();
-        table.integer('price').notNullable();
-        table.float('rating').notNullable();
-        table.integer('kills').notNullable();
-        table.integer('open_contracts').nullable();
+        table.string('photo');
+        table.string('full_name');
+        table.string('code_name');
+        table.string('weapon');
+        table.string('contact_info');
+        table.integer('age');
+        table.integer('price');
+        table.float('rating');
+        table.integer('kills');
+        table.integer('open_contracts');
     });
   };
   
