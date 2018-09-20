@@ -2,7 +2,7 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const favicon = require('serve-favicon');
 const path = require('path');
-// const methodOverride = require('method-override');
+const methodOverride = require('method-override');
 const port = process.env.PORT || 3000;
 const knexPath = path.join(__dirname, 'knexfile.js');
 const app = express();
@@ -14,12 +14,14 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(favicon(path.join(__dirname, 'public', 'gun_favicon.ico')));
 app.use(express.static(path.join('public')));
 
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine','ejs');
+
 app.disable('x-powered-by');
 let assassins = require('./routes/assassins');
 app.use(assassins);
 
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine','ejs');
+
 
 // const contracts = require('./routes/contracts');
 // app.use(contracts);

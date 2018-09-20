@@ -1,7 +1,7 @@
-<link rel="stylesheet" type="text/css" href="style.css" />
+<%- include /Users/gracehartzell/galvanize/q2/killbase-app/views/partials/navbar.ejs %>
 
-<%- include('../partials/navbar') %>
-
+<body>
+    
 <form method="POST" action="/assassins" onsubmit="return validateForm()">
 
         <div class="form-group">
@@ -26,7 +26,7 @@
 
         <div class="form-group">
             <label for="contact_info">Contact Info</label>
-            <input name="contact_info" type="text" class="form-control" id="contact_info" placeholder="Enter Email" required="true">
+            <input name="contact_info" type="email" class="form-control" id="contact_info" placeholder="Enter Email" required="true">
         </div>
         
         <div class="form-group">
@@ -56,3 +56,5 @@
 
         <button type="submit" class="btn btn-primary">Spawn Assassin</button>  
 </form>
+</body>
+</html>
