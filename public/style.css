@@ -1,11 +1,14 @@
 body {
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: 'optima';
+  background:url("deathTunnel.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 900px;
 }
 
-.assassinIMG {
-  height: 300px;
-  width: 300px;
-  object-fit: cover;
+.showcase {
+  text-align: center;
 }
 
 nav {
@@ -26,6 +29,8 @@ nav ul li{
 }
 nav > ul > li > a:hover {
   color: rgb(85, 84, 84);
+  text-decoration: none;
+
 }
 
 nav > ul > li > a {
@@ -41,15 +46,27 @@ nav > ul > li > a {
 }
 
 .bg-div{
- background:rgb(224, 221, 221);
+ /* background:rgb(224, 221, 221); */
  overflow: hidden;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.assassinIMG,
+.targetIMG {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
 }
 
 #buttons {
   float: right;
 }
 
-#newAssassinButton {
+#newButton {
   margin: 20px;
   float: right;
 }

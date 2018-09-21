@@ -1,0 +1,45 @@
+<%- include /Users/gracehartzell/galvanize/q2/killbase-app/views/partials/navbar.ejs %>
+
+<body>
+
+<form method="POST" action="/editContract/<%=contracts[0].contract_id %>" >
+
+    <div class="form-group">
+        <label for="photo">Target's Photo</label>
+        <input name="photo" type="text" class="form-control" id="photo" placeholder="Photo URL" value="<%= contracts[0].target_photo %>">
+      </div>    
+
+    <div class="form-group">
+      <label for="target_name">Target Name</label>
+      <input name="target_name" type="text" class="form-control" id="targetName" placeholder="Enter Target Name" value="<%= contracts[0].target_name%>">
+    </div>
+
+    <div class="form-group">
+      <label for="target_location">Target Location</label>
+      <input name="target_location" type="text" class="form-control" id="target_location" placeholder="Enter Code Name" value="<%= contracts[0].target_location %>">
+    </div>
+
+    <div class="form-group">
+        <label for="target_security">Target Security</label>
+        <input name="target_security" type="text" class="form-control" id="target_security" placeholder="Target Security" required="true" value="<%= contracts[0].target_security %>">
+    </div>
+
+    <div class="form-group">
+        <label for="client_name">Client Name</label>
+        <input name="client_name" type="text" class="form-control" id="client_name" placeholder="Enter Email" value="<%= contracts[0].client_name %>">
+    </div>
+    
+    <div class="form-group">
+        <label for="budget">Budget</label>
+        <input name="budget" type="integer" class="form-control" id="budget" placeholder="Budget" value="<%= contracts[0].budget %>">
+    </div>     
+    
+    <div class="form-group">
+        <label for="completed">Price</label>
+        <input name="completed" type="integer" class="form-control" id="completed" placeholder="Yes/No" value="<%= contracts[0].completed %>">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Corrupt Yourself</button>  
+</form>
+</body>
+</html>

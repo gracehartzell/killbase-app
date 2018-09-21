@@ -1,9 +1,5 @@
-
-
         <%- include('../partials/navbar') %>
 <body>
-    
-
     <section>
         <% assassins.forEach(function(assassins) { %>
 
@@ -34,7 +30,9 @@
 
                     <div id="buttons">
                         <a href="editAssassin/<%=assassins.assassins_id %>"><button class="editButton">Edit Assassin</button></a>
-                        <a href="assassins"><button class="deleteButton">Delete Assassin</button></a>    
+                        
+                        <form action="/deleteAssassins/<%=assassins.assassins_id %>" method="POST"><button class="deleteButton">Delete Assassin</button></form>
+
                     </div>
 
                 </div>
@@ -46,8 +44,8 @@
 
     </section>
 
-    <a href="newAssassin"> 
-    <button id="newAssassinButton">Add New Assassin</button>
+    <a href="/newAssassin"> 
+    <button id="newButton">Add New Assassin</button>
     </a>
 
 </body>

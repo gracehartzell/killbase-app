@@ -18,13 +18,11 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine','ejs');
 
 app.disable('x-powered-by');
+
 let assassins = require('./routes/assassins');
 app.use(assassins);
-
-
-
-// const contracts = require('./routes/contracts');
-// app.use(contracts);
+const contracts = require('./routes/contracts');
+app.use(contracts);
 
 app.get('/', (req, res) => {
     res.render('index');

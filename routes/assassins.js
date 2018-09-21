@@ -68,40 +68,50 @@ router.get('/editAssassin/:assassins_id', function(req, res, next) {
 });  
 
 router.post('/editAssassin/:assassins_id',(req,res, next)=>{
-  
   knex('assassins').where('assassins_id',req.params.assassins_id).then((assassins)=>{
     
-  knex('assassins').update({photo: req.body.photo, full_name : req.body.full_name, code_names : req.body.code_names, weapon : req.body.weapon, contact_info: req.body.contact_info, age : req.body.age, price: req.body.price, rating: req.body.rating, kills: req.body.kills}, '*').where('assassins_id',req.params.assassins_id).then((assassins)=>{
-    res.render('assassins/assassins',{assassins});
-  });
+  knex('assassins')
+    .update({ photo: req.body.photo, 
+      full_name : req.body.full_name, 
+      code_names : req.body.code_names, 
+      weapon : req.body.weapon, 
+      contact_info: req.body.contact_info, 
+      age : req.body.age, 
+      price: req.body.price, 
+      rating: req.body.rating, 
+      kills: req.body.kills}, '*')
+    .where('assassins_id',req.params.assassins_id)
+    .then((assassins) => {
+      res.render('assassins/assassins',{assassins});
+    });
   })
-  .catch((err)=>{
-    next(err);
-  })
+    .catch((err)=>{
+      next(err);
+    })
 });  
 
-// router.delete('/assassins', (req, res, next) => {
-//   let assassins;
-
-//   knex('assassins')
-//     .where('assassins_id', req.params.assassins_id)
-//     .first()
-//     .then((row) => {
-//       if (!row) {
-//         return next();
-//       }
-
-//       assassins = row;
-
-//       return knex('assassins')
-//         .del()
-//         .where('assassins_id', req.params.assassins_id);
-//     })
-//     .then(() => {
-//       delete assassins.assassins_id;
-//       res.send(assassins.assassins_id);
-//     });
-//   });
+router.post('/deleteAssassins/:assassins_id', (req, res, next) => {
+  let row;
+  knex('assassins')
+    .where('assassins_id', req.params.assassins_id)
+    .then((assassins) => {
+      row = assassins;
+      return knex('assassins')
+        .del()
+        .where('assassins_id', req.params.assassins_id);
+    })
+    .then(() => {
+      delete row.assassins_id;
+      knex('assassins')
+        .orderBy('assassins_id')
+        .then((assassins) => {
+          res.render('assassins/assassins', {assassins});
+        });
+    })
+    .catch((err)=>{
+      next(err);
+    });
+  });
 
 
 

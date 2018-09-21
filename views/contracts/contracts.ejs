@@ -1,0 +1,51 @@
+<%- include('../partials/navbar') %>
+<body>
+    <section>
+        <% contracts.forEach(function(contracts) { %>
+
+        <div class="container py-3">
+            <div class="card">
+            <div class="row ">
+             
+                    <img class="targetIMG" src= '<%= contracts.target_photo %>'/>
+           
+                <div class="col-md-8 px-3">
+                    <div class="card-block px-3">
+
+                        <h1 class="card-title"><%= contracts.target_name || 'Unknown'%></h1>
+                        <h4 class="card-subtitle"><%= contracts.client_name %></h4>
+                        
+                        <p class="card-text">
+                                TARGET LOCATION: <%= contracts.target_location %><br>
+                                BUDGET: <%= contracts.budget %><br>
+                                SECURITY LEVEL: <%= contracts.target_security %><br>
+                        </p>
+                    </div>
+
+                    <div id="buttons">
+
+                        <a href="/editContract/<%=contracts.contract_id %>"><button class="editButton">Edit Contract</button></a>
+
+                        <form action="/deleteContract/<%=contracts.contract_id %>" method="POST"><button class="deleteButton">Delete Contract</button></form>
+                    </div>
+
+                </div>
+        
+            </div>
+            </div>
+        </div>
+        <% })%>
+
+    </section>
+
+    <a href="/newContract"> 
+    <button id="newButton">Create Contract</button>
+    </a>
+
+</body>
+</html>
+
+
+
+
+

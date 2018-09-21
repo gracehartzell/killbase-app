@@ -1,0 +1,46 @@
+
+<%- include /Users/gracehartzell/galvanize/q2/killbase-app/views/partials/navbar.ejs %>
+<body>
+    
+
+<form method="POST" action="/contracts" onsubmit="return validateForm()" >
+
+    <div class="form-group">
+        <label for="photo">Target's Photo</label>
+        <input name="photo" type="text" class="form-control" id="photo" placeholder="Photo URL">
+      </div>    
+
+    <div class="form-group">
+      <label for="target_name">Target Name</label>
+      <input name="target_name" type="text" class="form-control" id="targetName" placeholder="Enter Target Name" required="true">
+    </div> 
+
+    <div class="form-group">
+      <label for="target_location">Target Location</label>
+      <input name="target_location" type="text" class="form-control" id="target_location" placeholder="Enter Code Name">
+    </div>
+
+    <div class="form-group">
+        <label for="target_security">Target Security</label>
+        <input name="target_security" type="text" class="form-control" id="target_security" placeholder="Target Security">
+    </div>
+
+    <div class="form-group">
+        <label for="client_name">Client Name</label>
+        <input name="client_name" type="text" class="form-control" id="client_name" placeholder="Enter Name (optional)">
+    </div>
+    
+    <div class="form-group">
+        <label for="budget">Budget</label>
+        <input name="budget" type="integer" class="form-control" id="budget" placeholder="Budget" required="true">
+    </div>     
+
+    <div class="form-group">
+        <label for="completed">Completed</label>
+        <input name="completed" type="integer" class="form-control" id="completed" placeholder="" required="true">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Corrupt Yourself</button>  
+</form>
+</body>
+</html>
