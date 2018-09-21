@@ -1,53 +1,53 @@
         <%- include('../partials/navbar') %>
 <body>
-    <section>
-        <% assassins.forEach(function(assassins) { %>
-
-        <div class="container py-3">
-            <div class="card">
-            <div class="row ">
-             
-                    <img class="assassinIMG" src= '<%= assassins.photo %>'/>
-           
-                <div class="col-md-8 px-3">
-                    <div class="card-block px-3">
-
-                        <h1 class="card-title"><%= assassins.full_name || 'Unknown'%></h1>
-                        <h4 class="card-subtitle"><%= assassins.code_name || assassins.full_name%></h4>
-                        
-                        <p class="card-text">
-                                CONTACT INFO: <%= assassins.contact_info %><br>
-                                AGE: <%= assassins.age %><br>
-                        </p>
-                        <p class="card-text">
-                                WEAPON: <%= assassins.weapon %><br>
+   <section class="gallery-block cards-gallery">
+       
+       <div class="container">
+           <div class="heading">
+               <h2>Available Assassins</h2>
+	        </div>
+	        <div class="row">
+                <% assassins.forEach(function(assassins) { %>
+                <div class="col-md-6 col-lg-4">
+	                <div class="card border-0 transform-on-hover">
+	                	<a class="lightbox">
+	                		<img class="assassinIMG" src= '<%= assassins.photo %>' alt="Assassin's Image" class="card-img-top">
+	                	</a>
+	                    <div class="card-body">
+							<h5><%= assassins.full_name || 'Unknown'%></h5>
+							<h6><%= assassins.code_name || assassins.full_name%></h6>
+	                        <p class="text-muted card-text"> 
+								CONTACT INFO: <%= assassins.contact_info %><br>
+								AGE: <%= assassins.age %><br>
+								WEAPON: <%= assassins.weapon %><br>
                                 PRICE: <%= assassins.price %><br>
                                 RATING: <%= assassins.rating %><br>
                                 KILLS: <%= assassins.kills %><br>
                                 OPEN CONTRACTS: <%= assassins.open_contracts %><br>
-                        </p>
-                    </div>
-
-                    <div id="buttons">
-                        <a href="editAssassin/<%=assassins.assassins_id %>"><button class="editButton">Edit Assassin</button></a>
-                        
-                        <form action="/deleteAssassins/<%=assassins.assassins_id %>" method="POST"><button class="deleteButton">Delete Assassin</button></form>
-
-                    </div>
-
-                </div>
-        
-            </div>
-            </div>
-        </div>
-        <% })%>
-
-    </section>
-
-    <a href="/newAssassin"> 
-    <button id="newButton">Add New Assassin</button>
-    </a>
-
+							</p>
+							<div id="buttons">
+									<a href="editAssassin/<%=assassins.assassins_id %>"><button class="editButton">Edit Assassin</button></a>
+									
+									<form action="/deleteAssassins/<%=assassins.assassins_id %>" method="POST" style="display: inline-block"><button class="deleteButton">Delete Assassin</button></form>
+			
+								</div>
+	                    </div>
+	                </div>
+	            </div>
+                <% })%>
+	            
+	        </div>
+		</div>
+		
+	</section>
+	<a href="/newAssassin"> 
+		<button id="newButton">Add New Assassin</button>
+	</a>
+	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script>
+        baguetteBox.run('.cards-gallery', { animation: 'slideIn'});
+    </script>
 </body>
 </html>
 

@@ -36,8 +36,7 @@ router.post('/contracts', (req, res, next) => {
           target_photo: req.body.target_photo,
           target_security: req.body.target_security,
           client_name: req.body.client_name,
-          budget: req.body.budget,
-          completed: req.body.completed
+          budget: req.body.budget
         })
       .then(() => {
         knex('contracts')
