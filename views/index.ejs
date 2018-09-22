@@ -18,10 +18,40 @@
       <h1>Killbase</h1>
       <h2>Elite. International. Deadly.</h2>
 
-    </div>
+    <section class="loginform cf">
+      <form 
+        name="login" 
+        action="index_submit" 
+        method="get" 
+        accept-charset="utf-8"
+      >
+        <ol>
+          <li>
+            <label for="usermail">Email</label>
+            <input 
+              type="email" 
+              name="usermail" 
+              placeholder="yourname@email.com" 
+              required
+            >
+          </li>
+          <li><label for="password">Password</label>
+            <input 
+              type="password" 
+              name="password" 
+              placeholder="password" 
+              required
+            >
+          </li>
+          <li><input type="submit" value="Login"></li>
+        <ol>
+
+      </form>
+    </section>
 
     </div>
-    <%- include('partials/footer') %>
+  </div>
+
 
 </body>
 </html>
