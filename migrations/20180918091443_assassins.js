@@ -7,10 +7,11 @@ exports.up = function(knex) {
         table.string('weapon');
         table.string('contact_info');
         table.integer('age');
-        table.integer('price');
+        table.integer('price').defaultTo(0);
         table.float('rating');
         table.integer('kills');
         table.integer('open_contracts');
+        table.string('hashed_password');
     });
   };
   
