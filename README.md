@@ -9,24 +9,24 @@
 
 There may be some additional features, such as search, that are nice-to-haves, but a lower priority than the core features. Focus on the basic CRUD actions. The good people at Killbase have provided you some sample data from their existing registry that you can use for development.
 
-An example application can be found here: https://killbase-galvanize.herokuapp.com/
+An example application can be found here: https://grace-killbase.herokuapp.com/
 
 ## Import stories into Issue Tracker
 
 Import these user stories into a new project in the issue tracker of your choice. You may find it useful to prioritize the stories before you begin.
 
-* As a user, I need to be able to identify the company (style/branding/logo)
-* As a user, I need to be able to list all the assassins
-* As a user, I need to be able to delete an existing assassin
-* As a user, I need to be able to edit existing assassin
-* As a user, I need to be able to link to a specific assassin
-* As a user, I need to be able to list all the contracts
-* As a user, I need to be able to easily navigate between assassins and contracts
-* As a user, I need to be able to add a contract
+* ~~As a user, I need to be able to identify the company (style/branding/logo)~~
+* ~~As a user, I need to be able to list all the assassins~~
+* ~~As a user, I need to be able to delete an existing assassin~~
+* ~~As a user, I need to be able to edit existing assassin~~
+* ~~As a user, I need to be able to link to a specific assassin~~
+* ~~As a user, I need to be able to list all the contracts~~
+* ~~As a user, I need to be able to easily navigate between assassins and contracts~~
+* ~~As a user, I need to be able to add a contract~~
 * As a user, I need to be able to assign an assassin to a contract
-* As a user, I need to be able to delete an existing contract
-* As a user, I need to be able to edit existing contracts
-* As a user, I need to be able to link to a specific contract
+* ~~As a user, I need to be able to delete an existing contract~~
+* ~~As a user, I need to be able to edit existing contracts~~
+* ~~As a user, I need to be able to link to a specific contract~~
 * As a user, I need to be able to link to a contract from an assassin.
 * As a user, I need to be able to link to an assassin from a contract
 * As a user, I need to be able to filter/sort assassins by price, kills, or rating
@@ -37,7 +37,7 @@ Import these user stories into a new project in the issue tracker of your choice
 * As a user, I need to be able to search for active contracts
 * As a user, I need to be able see the total number of assassins
 * As a user, I need to be able to see the total number of contracts
-* As a user, I need to be able to add a new assassin
+* ~~As a user, I need to be able to add a new assassin~~
 * As a user, I need to be able to assign an assassin to a contract
 * As a user, I need to be able to complete a contract
 * As a user, I need to be able to remove an assassin from a contract
