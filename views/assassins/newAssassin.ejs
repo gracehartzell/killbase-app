@@ -1,61 +1,141 @@
 <%- include('../partials/navbar') %>
 
-
 <body>
-    
-<form method="POST" action="/assassins" onsubmit="return validateForm()">
+<div class="container" id="input-form">
+    <h2>Spawn an Assassin</h2>
 
+    <form method="POST" action="/assassins" onsubmit="return validateForm()">
+        
         <div class="form-group">
             <label for="photo">Photo Link</label>
-            <input name="photo" type="text" class="form-control" id="photo" placeholder="Photo URL">
-          </div>    
+            <input 
+                name="photo" 
+                    type="text" 
+                    class="form-control" 
+                    id="photo" 
+                    placeholder="Photo URL"
+                >
+        </div>    
 
         <div class="form-group">
-          <label for="full_name">Full Name</label>
-          <input name="full_name" type="text" class="form-control" id="fullName" placeholder="Enter Full Name">
+            <label for="full_name">Full Name</label>
+            <input 
+                name="full_name" 
+                type="text" 
+                class="form-control" 
+                id="fullName" 
+                placeholder="Enter Full Name"
+            >
         </div>
 
         <div class="form-group">
-          <label for="code_name">Code Name</label>
-          <input name="code_name" type="text" class="form-control" id="code_name" placeholder="Enter Code Name">
+            <label for="code_name">Code Name</label>
+            <input 
+                name="code_name" 
+                type="text" 
+                class="form-control" 
+                id="code_name" 
+                placeholder="Enter Code Name"
+            >
         </div>
 
         <div class="form-group">
             <label for="weapon">Weapon</label>
-            <input name="weapon" type="text" class="form-control" id="weapon" placeholder="Weapon of Choice" required="true">
+            <input 
+                name="weapon" 
+                type="text" 
+                class="form-control" 
+                id="weapon" 
+                placeholder="Weapon of Choice" 
+            >
         </div>
 
         <div class="form-group">
             <label for="contact_info">Contact Info</label>
-            <input name="contact_info" type="email" class="form-control" id="contact_info" placeholder="Enter Email" required="true">
+            <input 
+                name="contact_info" 
+                type="email" 
+                class="form-control" 
+                id="contact_info" 
+                placeholder="Enter Email" 
+                required="true"
+            >
         </div>
         
         <div class="form-group">
             <label for="age">Age</label>
-            <input name="age" type="integer" class="form-control" id="age" placeholder="Age" required="true">
+            <input 
+                name="age" 
+                type="integer" 
+                class="form-control" 
+                id="age" 
+                placeholder="Age" 
+            >
         </div>     
         
         <div class="form-group">
             <label for="price">Price</label>
-            <input name="price" type="integer" class="form-control" id="price" placeholder="Price Here" required="true">
+            <input 
+                name="price" 
+                type="integer" 
+                class="form-control" 
+                id="price" 
+                placeholder="Price Here" 
+            >
         </div>
 
         <div class="form-group">
             <label for="rating">Rating</label>
-            <input name="rating" type="float" class="form-control" id="rating" placeholder="Rating (0-10)" required="true">
+            <input 
+                name="rating" 
+                type="float" 
+                class="form-control" 
+                id="rating" 
+                placeholder="Rating (0-10)" 
+                required="true"
+            >
         </div>     
 
         <div class="form-group">
             <label for="kills">Kills</label>
-            <input name="kills" type="integer" class="form-control" id="kills" placeholder="Kill Count" required="true">
+            <input 
+                name="kills" 
+                type="integer" 
+                class="form-control" 
+                id="kills" 
+                placeholder="Kill Count" 
+            >
         </div>    
 
         <div class="form-group">
             <label for="open_contracts">Open Contracts</label>
-            <input name="open_contracts" type="integer" class="form-control" id="open_contracts" placeholder="Open Contracts" required="true">
+            <input 
+                name="open_contracts" 
+                type="integer" 
+                class="form-control" 
+                id="open_contracts" 
+                placeholder="Open Contracts" 
+                required="true"
+            >
         </div>  
 
-        <button type="submit" class="btn btn-primary">Spawn Assassin</button>  
-</form>
+        <div class="form-group">
+                <label for="hashed_password">Password</label>
+                <input 
+                    name="hashed_password" 
+                    type="integer" 
+                    class="form-control" 
+                    id="hashed_password" 
+                    placeholder="Open Contracts" 
+                    required="true"
+                >
+            </div>  
+        <div class="clearfix"></div>
+
+        <button type="submit" class="btn btn-info btn-lg btn-responsive" id="search"> <span class="glyphicon glyphicon-search"></span> Spawn Assassin</button>
+
+    </form>
+</div>
+
 </body>
 </html>

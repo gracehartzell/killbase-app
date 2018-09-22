@@ -1,41 +1,51 @@
-        <%- include('../partials/navbar') %>
+<%- include('../partials/navbar') %>
 <body>
    <section class="gallery-block cards-gallery">
        
-       <div class="container">
-           <div class="heading">
-               <h2>Available Assassins</h2>
-	        </div>
-	        <div class="row">
-                <% assassins.forEach(function(assassins) { %>
-                <div class="col-md-6 col-lg-4">
-	                <div class="card border-0 transform-on-hover">
-	                	<a class="lightbox">
-	                		<img class="assassinIMG" src= '<%= assassins.photo %>' alt="Assassin's Image" class="card-img-top">
-	                	</a>
-	                    <div class="card-body">
-							<h5><%= assassins.full_name || 'Unknown'%></h5>
-							<h6><%= assassins.code_name || assassins.full_name%></h6>
-	                        <p class="text-muted card-text"> 
-								CONTACT INFO: <%= assassins.contact_info %><br>
-								AGE: <%= assassins.age %><br>
-								WEAPON: <%= assassins.weapon %><br>
-                                PRICE: <%= assassins.price %><br>
-                                RATING: <%= assassins.rating %><br>
-                                KILLS: <%= assassins.kills %><br>
-                                OPEN CONTRACTS: <%= assassins.open_contracts %><br>
-							</p>
-							<div id="buttons">
-									<a href="editAssassin/<%=assassins.assassins_id %>"><button class="editButton">Edit Assassin</button></a>
-									
-									<form action="/deleteAssassins/<%=assassins.assassins_id %>" method="POST" style="display: inline-block"><button class="deleteButton">Delete Assassin</button></form>
-			
-								</div>
-	                    </div>
-	                </div>
-	            </div>
-                <% })%>
-	            
+    <div class="container">
+        <div class="heading">
+            <h2>Available Assassins</h2>
+        </div>
+        <div class="row">
+            <% assassins.forEach(function(assassins) { %>
+            <div class="col-md-6 col-lg-4">
+                <div class="card border-0 transform-on-hover">
+                    <a class="lightbox">
+                        <img class="assassinIMG" src= '<%= assassins.photo %>' alt="Assassin's Image" class="card-img-top">
+                    </a>
+                    <div class="card-body">
+                        <h5><%= assassins.full_name || 'Unknown'%></h5>
+                        <h6><%= assassins.code_name || assassins.full_name%></h6>
+
+                        <p class="text-muted card-text"> 
+                            CONTACT: <%= assassins.contact_info %><br>
+                            WEAPON: <%= assassins.weapon %><br>
+                            AGE: <%= assassins.age %><br>
+                            PRICE: <%= assassins.price %><br>
+                            RATING: <%= assassins.rating %><br>
+                            KILLS: <%= assassins.kills %><br>
+                            OPEN CONTRACTS: <%= assassins.open_contracts %><br>
+                        </p>
+
+                        <div id="buttons">
+                                <a href="/editAssassin/<%=assassins.assassins_id %>">
+                                    <button class="editButton">Edit Assassin</button>
+                                </a>
+                                
+                                <form 
+                                  action="/deleteAssassins/<%=assassins.assassins_id %>" 
+                                  method="POST" 
+                                  style="display: inline-block"
+                                >
+                                    <button class="deleteButton" type="submit">Delete Assassin</button>
+                                </form>
+        
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <% })%>
+            
 	        </div>
 		</div>
 		

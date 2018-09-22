@@ -1,48 +1,58 @@
 <%- include('../partials/navbar') %>
-
 <body>
-    <section>
-        <% contracts.forEach(function(contracts) { %>
+   <section class="gallery-block cards-gallery">
+       
+    <div class="container">
+        <div class="heading">
+            <h2>Contracts</h2>
+        </div>
 
-        <div class="container py-3">
-            <div class="card">
-            <div class="row ">
-             
+        <div class="row">
+                <% contracts.forEach(function(contracts) { %>
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card border-0 transform-on-hover">
+                    <a class="lightbox">
                     <img class="targetIMG" src= '<%= contracts.target_photo %>'/>
-           
-                <div class="col-md-8 px-3">
-                    <div class="card-block px-3">
+                    </a>
+                    <div class="card-body">
+                        <h5><%= contracts.target_name %></h5>
+                        <h6><%= contracts.client_name %></h6>
 
-                        <h1 class="card-title"><%= contracts.target_name || 'Unknown'%></h1>
-                        <h4 class="card-subtitle"><%= contracts.client_name %></h4>
-                        
-                        <p class="card-text">
+                        <p class="text-muted card-text"> 
                                 TARGET LOCATION: <%= contracts.target_location %><br>
                                 BUDGET: <%= contracts.budget %><br>
                                 SECURITY LEVEL: <%= contracts.target_security %><br>
                         </p>
+
+                        <div id="buttons">
+                                <a href="/editContract/<%=contracts.contract_id %>">
+                                    <button class="editButton">Edit Contract</button>
+                                </a>
+                                <form 
+                                    action="/deleteContract/<%=contracts.contract_id %>" 
+                                    method="POST" 
+                                    style="display: inline-block"
+                                  ><button class="deleteButton">Delete Contract</button>
+                                </form>
+                        </div>
                     </div>
-
-                    <div id="buttons">
-
-                        <a href="/editContract/<%=contracts.contract_id %>"><button class="editButton">Edit Contract</button></a>
-
-                        <form action="/deleteContract/<%=contracts.contract_id %>" method="POST"><button class="deleteButton">Delete Contract</button></form>
-                    </div>
-
                 </div>
-        
             </div>
-            </div>
-        </div>
-        <% })%>
-
+            <% })%>
+	    </div>
+	</div>
     </section>
-
+    
     <a href="/newContract"> 
-    <button id="newButton">Create Contract</button>
+        <button id="newButton">Create Contract</button>
     </a>
-
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
+    <script>
+        baguetteBox.run('.cards-gallery', { animation: 'slideIn'});
+    </script>
 </body>
 </html>
 

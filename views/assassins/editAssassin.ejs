@@ -1,63 +1,143 @@
-
-
 <%- include('../partials/navbar') %>
 
-<body>
+<div class="container" id="input-form">
+        <h2>Corrupt Assassin</h2>
+
+    <form method="POST" action="/editAssassin/<%=assassins[0].assassins_id %>">
+            <div class="form-group">
+                <label for="photo">Photo Link</label>
+                <input 
+                    name="photo" 
+                    type="text" 
+                    class="form-control" 
+                    id="photo" 
+                    placeholder="Photo URL" 
+                    value="<%= assassins[0].photo%>"
+                >
+            </div>    
     
-
-<form method="POST" action="/editAssassin/<%=assassins[0].assassins_id %>" >
-
-    <div class="form-group">
-        <label for="photo">Photo Link</label>
-        <input name="photo" type="text" class="form-control" id="photo" placeholder="Photo URL" value="<%= assassins[0].photo%>">
-      </div>    
-
-    <div class="form-group">
-      <label for="full_name">Full Name</label>
-      <input name="full_name" type="text" class="form-control" id="fullName" placeholder="Enter Full Name" value="<%= assassins[0].full_name%>">
-    </div>
-
-    <div class="form-group">
-      <label for="code_name">Code Name</label>
-      <input name="code_name" type="text" class="form-control" id="code_name" placeholder="Enter Code Name" value="<%= assassins[0].code_name %>">
-    </div>
-
-    <div class="form-group">
-        <label for="weapon">Weapon</label>
-        <input name="weapon" type="text" class="form-control" id="weapon" placeholder="Weapon of Choice" required="true" value="<%= assassins[0].weapon %>">
-    </div>
-
-    <div class="form-group">
-        <label for="contact_info">Contact Info</label>
-        <input name="contact_info" type="email" class="form-control" id="contact_info" placeholder="Enter Email" required="true" value="<%= assassins[0].contact_info %>">
-    </div>
+            <div class="form-group">
+                <label for="full_name">Full Name</label>
+                <input name="full_name" 
+                    type="text" 
+                    class="form-control" 
+                    id="fullName" 
+                    placeholder="Enter Full Name" 
+                    value="<%= assassins[0].full_name%>"
+                >
+            </div>
     
-    <div class="form-group">
-        <label for="age">Age</label>
-        <input name="age" type="integer" class="form-control" id="age" placeholder="Age" required="true" value="<%= assassins[0].age %>">
-    </div>     
+            <div class="form-group">
+                <label for="code_name">Code Name</label>
+                <input 
+                    name="code_name" 
+                    type="text" 
+                    class="form-control" 
+                    id="code_name" 
+                    placeholder="Enter Code Name" 
+                    value="<%= assassins[0].code_name %>"
+                >
+            </div>
     
-    <div class="form-group">
-        <label for="price">Price</label>
-        <input name="price" type="integer" class="form-control" id="price" placeholder="Price Here" required="true" value="<%= assassins[0].price %>">
-    </div>
+            <div class="form-group">
+                <label for="weapon">Weapon</label>
+                <input 
+                    name="weapon" 
+                    type="text" 
+                    class="form-control" 
+                    id="weapon" 
+                    placeholder="Weapon of Choice" 
+                    value="<%= assassins[0].weapon %>"
+                >
+            </div>
+    
+            <div class="form-group">
+                <label for="contact_info">Contact Info</label>
+                <input 
+                    name="contact_info" 
+                    type="email" 
+                    class="form-control" 
+                    id="contact_info" 
+                    placeholder="Enter Email" 
+                    required="true" 
+                    value="<%= assassins[0].contact_info %>"
+                >
+            </div>
+            
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input 
+                    name="age" 
+                    type="integer" class="form-control" 
+                    id="age" 
+                    placeholder="Age" 
+                    value="<%= assassins[0].age %>"
+                >
+            </div>     
+            
+            <div class="form-group">
+                <label for="price">Minimum Asking Price</label>
+                <input 
+                    name="price" 
+                    type="integer" class="form-control" 
+                    id="price" 
+                    placeholder="Price Here" 
+                    required="true" 
+                    value="<%= assassins[0].price %>"
+                >
+            </div>
+    
+            <div class="form-group">
+                <label for="rating">Rating</label>
+                <input 
+                    name="rating" 
+                    type="float" 
+                    class="form-control" 
+                    id="rating" 
+                    placeholder="Rating (0-10)" 
+                    required="true" 
+                    value="<%= assassins[0].rating %>"
+                >
+            </div>     
+    
+            <div class="form-group">
+                <label for="kills">Kills</label>
+                <input 
+                    name="kills" 
+                    type="integer" 
+                    class="form-control" 
+                    id="kills" 
+                    placeholder="Kill Count" 
+                    value="<%= assassins[0].kills %>"
+                >
+            </div>    
+    
+            <div class="form-group">
+                <label for="open_contracts">Open Contracts</label>
+                <input 
+                    name="open_contracts" 
+                    type="integer" 
+                    class="form-control" 
+                    id="open_contracts" 
+                    placeholder="Open Contracts" 
+                    value="<%= assassins[0].open_contracts %>"
+                >
+            </div>  
 
-    <div class="form-group">
-        <label for="rating">Rating</label>
-        <input name="rating" type="float" class="form-control" id="rating" placeholder="Rating (0-10)" required="true" value="<%= assassins[0].rating %>">
-    </div>     
+        <div class="clearfix"></div>
+        
+        <button 
+            type="submit" 
+            class="btn btn-info btn-lg btn-responsive" 
+            id="search"
+        >   
+            <span 
+                class="glyphicon glyphicon-search">
+            </span> Corrupt Assassin
+        </button>
+        
+    </form>
+</div>
 
-    <div class="form-group">
-        <label for="kills">Kills</label>
-        <input name="kills" type="integer" class="form-control" id="kills" placeholder="Kill Count" required="true" value="<%= assassins[0].kills %>">
-    </div>    
-
-    <div class="form-group">
-        <label for="open_contracts">Open Contracts</label>
-        <input name="open_contracts" type="integer" class="form-control" id="open_contracts" placeholder="Open Contracts" required="true" value="<%= assassins[0].open_contracts %>">
-    </div>  
-
-    <button type="submit" class="btn btn-primary">Corrupt Assassin</button>  
-</form>
 </body>
 </html>

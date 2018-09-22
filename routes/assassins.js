@@ -44,7 +44,6 @@ router.post('/assassins', (req, res, next) => {
         knex('assassins')
           .orderBy('assassins_id')
           .then((assassins) => {
-            // res.redirect('assassins/assassins', {assassins});
             res.render('assassins/assassins', {assassins});
         });
       })
@@ -59,12 +58,11 @@ router.get('/editAssassin/:assassins_id', function(req, res, next) {
     if(!assassins) {
       return next();
     }
-    
   res.render('assassins/editAssassin',{assassins}); 
 })
-.catch((err)=>{
-  next(err);
-})
+  .catch((err)=>{
+    next(err);
+  })
 });  
 
 router.post('/editAssassin/:assassins_id',(req,res, next)=>{
