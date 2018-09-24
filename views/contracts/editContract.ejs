@@ -1,13 +1,11 @@
 <%- include('../partials/navbar') %>
 <title>Edit Contract</title>
 
-
-<link href="css/titatoggle-dist.css" rel="stylesheet">
 <body>
 <div class="container" id="input-form">
         <h2>Edit Contract</h2>
 
-    <form method="POST" action="/editContract/<%=contracts[0].contract_id %>?_method=patch" >
+    <form method="POST" action="/editContract/<%=contracts[0].contract_id %>?_method=patch">
         <div class="form-group">
             <label for="photo">Target's Photo</label>
             <input 

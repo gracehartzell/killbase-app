@@ -138,7 +138,7 @@ router.patch('/editAssassin/:assassins_id',(req,res, next)=>{
     })
 });  
 
-router.post('/deleteAssassins/:assassins_id', (req, res, next) => {
+router.delete('/deleteAssassins/:assassins_id', (req, res, next) => {
   let row;
   knex('assassins')
     .where('assassins_id', req.params.assassins_id)

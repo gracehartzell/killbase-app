@@ -45,15 +45,16 @@
                         </p>
 
                         <div id="buttons">
-                                <a href="/editContract/<%=contracts.contract_id %>">
-                                    <button class="editButton">Edit</button>
-                                </a>
-                                <form 
-                                    action="/deleteContract/<%=contracts.contract_id %>" 
-                                    method="POST" 
-                                    style="display: inline-block"
-                                  ><button class="deleteButton">Delete</button>
-                                </form>
+                            <a href="/editContract/<%=contracts.contract_id %>">
+                                <button class="editButton">Edit</button>
+                            </a>
+                            <form 
+                                action="/deleteContract/<%=contracts.contract_id%>?_method=delete" 
+                                method="POST" 
+                                style="display: inline-block"
+                                ><button class="deleteButton">Delete</button>
+                            </form>
+                            
                         </div>
                         </a>
                     </div>

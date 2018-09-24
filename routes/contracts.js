@@ -102,7 +102,7 @@ router.patch('/editContract/:contract_id',(req,res, next)=>{
     })
 });  
 
-router.post('/deleteContract/:contract_id', (req, res, next) => {
+router.delete('/deleteContract/:contract_id', (req, res, next) => {
   let row;
   knex('contracts')
     .where('contract_id', req.params.contract_id)
