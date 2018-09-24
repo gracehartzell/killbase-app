@@ -4,7 +4,7 @@
 <div class="container" id="input-form">
         <h2>Corrupt Assassin</h2>
 
-    <form method="POST" action="/editAssassin/<%=assassins[0].assassins_id %>">
+    <form method="POST" action="/editAssassin/<%=assassins[0].assassins_id %>?_method=patch">
             <div class="form-group">
                 <label for="photo">Photo Link</label>
                 <input 

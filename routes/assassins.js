@@ -24,6 +24,7 @@ router.get('/assassins/:assassins_id', (req, res, next) => {
       });
   });
 
+// NEW ASSASSIN
 router.get('/newAssassin', (req, res) => {
     res.render('assassins/newAssassin', { });
 });
@@ -65,7 +66,7 @@ router.get('/editAssassin/:assassins_id', function(req, res, next) {
   })
 });  
 
-router.post('/editAssassin/:assassins_id',(req,res, next)=>{
+router.patch('/editAssassin/:assassins_id',(req,res, next)=>{
   knex('assassins').where('assassins_id',req.params.assassins_id).then((assassins)=>{
     
   knex('assassins')
@@ -79,8 +80,8 @@ router.post('/editAssassin/:assassins_id',(req,res, next)=>{
       rating: req.body.rating, 
       kills: req.body.kills}, '*')
     .where('assassins_id',req.params.assassins_id)
-    .then((assassins) => {
-      res.render('assassins/assassins',{assassins});
+    .then(() => {
+      res.redirect(302, '/assassins');
     });
   })
     .catch((err)=>{
