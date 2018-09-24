@@ -8,6 +8,7 @@ const knexPath = path.join(__dirname, 'knexfile.js');
 const app = express();
 
 const knex = require('./db/knex');
+app.use(methodOverride('_method'))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 

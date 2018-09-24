@@ -1,4 +1,6 @@
 <%- include('../partials/navbar') %>
+<title>Contracts</title>
+
 <body>
     <a href="/newContract"> 
         <button id="newButton">Create Contract</button>
@@ -16,7 +18,10 @@
        
     <div class="container">
         <div class="heading">
-            <h2>Contracts</h2>
+            <h2>Contracts
+            <h6>Number of contracts: 
+                <%= contracts.length %> </h6>
+            </h2>
         </div>
 
         <div class="row">

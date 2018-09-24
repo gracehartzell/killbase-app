@@ -31,11 +31,11 @@ router.get('/newAssassin', (req, res) => {
 router.post('/assassins', (req, res, next) => {
     knex('assassins')
       .insert({   photo: req.body.photo || 'https://media1.tenor.com/images/511247037018cc91bd3a446bf54ce93c/tenor.gif?itemid=9486432',
-        full_name: req.body.full_name, 
-        code_name: req.body.code_name, 
-        weapon: req.body.weapon, 
+        full_name: req.body.full_name || 'Unknown', 
+        code_name: req.body.code_name || 'Unknown', 
+        weapon: req.body.weapon || 'Unknown', 
         contact_info: req.body.contact_info, 
-        age: req.body.age, 
+        age: req.body.age || 0, 
         price: req.body.price, 
         rating: req.body.rating, 
         kills: req.body.kills, 
@@ -43,8 +43,8 @@ router.post('/assassins', (req, res, next) => {
       .then(() => {
         knex('assassins')
           .orderBy('assassins_id')
-          .then((assassins) => {
-            res.render('assassins/assassins', {assassins});
+          .then(() => {
+            res.redirect(302, '/assassins');
         });
       })
       .catch((err) => {

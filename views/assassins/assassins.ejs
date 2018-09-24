@@ -1,20 +1,30 @@
 <%- include('../partials/navbar') %>
+<title>Assassins</title>
+
+
 <body>
     <a href="/newAssassin"> 
         <button id="newButton">Add New Assassin</button>
     </a>
-   <section class="gallery-block cards-gallery">
-       
-    <div class="container">
-        <div class="heading">
-            <h2>Available Assassins</h2>
-        </div>
+    
+    <section class="gallery-block cards-gallery"> 
+        <div class="container">
+            <div class="heading">
+                <h2>Available Assassins</h2>
+                <h6>Total number of assassins: 
+                    <%= assassins.length %> </h6>
+            </div>
         <div class="row">
             <% assassins.forEach(function(assassins) { %>
             <div class="col-md-6 col-lg-4">
                 <div class="card border-0 transform-on-hover">
                     <a class="lightbox">
-                        <img class="assassinIMG" src= '<%= assassins.photo %>' alt="Assassin's Image" class="card-img-top">
+                        <img 
+                            class="assassinIMG" 
+                            src= '<%= assassins.photo %>' 
+                            alt="Assassin's Image" 
+                            class="card-img-top"
+                        >
                     </a>
                     <div class="card-body">
                         <h5><%= assassins.full_name || 'Unknown'%></h5>

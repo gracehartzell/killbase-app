@@ -12,7 +12,7 @@ exports.seed = function(knex) {
                 rating: 7.5, 
                 kills: 28, 
                 open_contracts: 1,
-                hashed_password: bcryptSync.hashSync(`jackal`, 10)
+                // hashed_password: bcryptSync.hashSync(`jackal`, 10)
             },
                 {photo: 'https://cdn.shopify.com/s/files/1/0153/2051/products/Adam-Caldwell-Anton-Chigur_1024x1024.jpg?v=1515712373' ,
                 full_name: 'Anton Chigurh', 
@@ -24,7 +24,7 @@ exports.seed = function(knex) {
                 rating: 9, 
                 kills: 72, 
                 open_contracts: 3,
-                hashed_password: bcryptSync.hashSync(`nocountry`, 10) 
+                // hashed_password: bcryptSync.hashSync(`nocountry`, 10) 
             },
                 {photo: 'http://nextprojection.com/wp-content/uploads/2014/08/Ghost-Dog-1.jpg',
                 full_name: '', 
@@ -36,7 +36,7 @@ exports.seed = function(knex) {
                 rating: 6.5, 
                 kills: 35, 
                 open_contracts: 1,
-                hashed_password: bcryptSync.hashSync(`ghostcat`, 10) 
+                // hashed_password: bcryptSync.hashSync(`ghostcat`, 10) 
             },
                 {photo: 'https://timedotcom.files.wordpress.com/2016/07/jason-bourne.jpg',
                 full_name: 'Jason Bourne', 
@@ -48,7 +48,7 @@ exports.seed = function(knex) {
                 rating: 7, 
                 kills: 48, 
                 open_contracts: 3,
-                hashed_password: bcryptSync.hashSync(`bourne`, 10) 
+                // hashed_password: bcryptSync.hashSync(`bourne`, 10) 
             },
                 {photo: 'http://ballinnn.com/wp-content/uploads/2018/04/JohnWicksHorribleHair.0.jpg',
                 full_name: 'John Wick', 
@@ -60,7 +60,7 @@ exports.seed = function(knex) {
                 rating: 9.5, 
                 kills: 433, 
                 open_contracts: 6,
-                hashed_password: bcryptSync.hashSync(`babayaga`, 10) 
+                // hashed_password: bcryptSync.hashSync(`babayaga`, 10) 
             },
                 {photo: 'https://i.pinimg.com/originals/38/80/be/3880be0b24e775a7f47402687421d533.jpg',
                 full_name: 'Jules Winnfield', 
@@ -72,7 +72,7 @@ exports.seed = function(knex) {
                 rating: 6.5, 
                 kills: 13, 
                 open_contracts: 0,
-                hashed_password: bcryptSync.hashSync(`royalewithcheese`, 10) 
+                // hashed_password: bcryptSync.hashSync(`royalewithcheese`, 10) 
             },
                 {photo: 'http://i544.photobucket.com/albums/hh356/jelley370/picture108n.png',
                 full_name: 'Leon', 
@@ -84,7 +84,7 @@ exports.seed = function(knex) {
                 rating: 8.5, 
                 kills: 87, 
                 open_contracts: 3,
-                hashed_password: bcryptSync.hashSync(`matilda`, 10)
+                // hashed_password: bcryptSync.hashSync(`matilda`, 10)
             },
                 {photo: 'https://vignette.wikia.nocookie.net/nikita2010/images/0/0c/Nikita2010_Promos_Season1_0008.jpg/revision/latest?cb=20120827100226&path-prefix=fr',
                 full_name: 'Nikita Mears', 
@@ -96,7 +96,7 @@ exports.seed = function(knex) {
                 rating: 7, 
                 kills: 32, 
                 open_contracts: 1,
-                hashed_password: bcryptSync.hashSync(`nikita`, 10)
+                // hashed_password: bcryptSync.hashSync(`nikita`, 10)
             },
                 {photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw4OBCSwxtka4cYzmBrZHmxedk73vRdVIW1hEUSiOqolnKaGlR',
                 full_name: 'Pickle Rick', 
@@ -108,7 +108,7 @@ exports.seed = function(knex) {
                 rating: 8, 
                 kills: 24, 
                 open_contracts: 4,
-                hashed_password: bcryptSync.hashSync(`morty1`, 10)
+                // hashed_password: bcryptSync.hashSync(`morty1`, 10)
             }
             ]);
         });
