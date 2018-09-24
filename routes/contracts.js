@@ -110,6 +110,29 @@ router.post('/deleteContract/:contract_id', (req, res, next) => {
     });
   });
 
+router.get('/completedContracts', (req, res, next) => {
+  knex('contracts')
+    .orderBy('contract_id')
+    .then((contracts) => {
+      res.render('contracts/completedContracts', {contracts});
+    })
+    .catch(function(err) {
+      console.log(err);
+      res.sendStatus(500);
+    });
+});
+
+router.get('/activeContracts', (req, res, next) => {
+  knex('contracts')
+    .orderBy('contract_id')
+    .then((contracts) => {
+      res.render('contracts/activeContracts', {contracts});
+    })
+    .catch(function(err) {
+      console.log(err);
+      res.sendStatus(500);
+    });
+});
 
 
 module.exports = router;

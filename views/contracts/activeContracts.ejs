@@ -1,0 +1,57 @@
+<%- include('../partials/navbar') %>
+<body>
+    <a href="/newContract"> 
+        <button id="newButton">Create Contract</button>
+    </a>
+    <a href="/activeContracts"> 
+        <button id="newButton">Active Contracts</button>
+    </a>
+    <a href="/completedContracts"> 
+        <button id="newButton">Completed Contracts</button>
+    </a>
+
+<section class="gallery-block cards-gallery">   
+    <div class="container">
+        <div class="heading">
+            <h2>Active Contracts</h2>
+        </div>
+
+        <div class="row">
+                <% contracts.forEach(function(contracts) { %>
+                    <% if(contracts.completed === false) { %> 
+
+            <div class="col-md-6 col-lg-4">
+                <div class="card border-0 transform-on-hover">
+                    <a class="lightbox">
+                    <img class="targetIMG" src= '<%= contracts.target_photo %>'/>
+                    </a>
+                    <div class="card-body">
+                        <h5><%= contracts.target_name %></h5>
+                        <h6><%= contracts.client_name %></h6>
+
+                        <p class="text-muted card-text"> 
+                            LOCATION: <%= contracts.target_location %><br>
+                            BUDGET: <%= contracts.budget %><br>
+                            SECURITY LEVEL: <%= contracts.target_security %><br>
+                            Complete: <%= contracts.completed %>
+                        </p>
+
+                        <div id="buttons">
+                            <a href="/editContract/<%=contracts.contract_id %>">
+                                <button class="editButton">Edit</button>
+                            </a>
+                            <form 
+                                action="/deleteContract/<%=contracts.contract_id %>" 
+                                method="POST" 
+                                style="display: inline-block"
+                                ><button class="deleteButton">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                <% }; %>
+            <% }); %>
+	    </div>
+	</div>
+</section>
