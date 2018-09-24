@@ -1,12 +1,22 @@
 <%- include('../partials/navbar') %>
 <title>Assassins</title>
 
-
 <body>
-    <a href="/newAssassin"> 
-        <button id="newButton">Add New Assassin</button>
-    </a>
-    
+    <div class="sidebar">
+        <div class="dropdown">
+            <button class="dropbtn">Sort By (descending)</button>
+            <div class="dropdown-content">
+                <a href="/rating">Rating</a>
+                <a href="/price">Price</a>
+                <a href="/kills">Kills</a>
+                <a href="/age">Age (asc.)</a>
+            </div>
+        </div>
+        <a href="/newAssassin"> 
+            <button id="newButton">Add New Assassin</button>
+        </a>
+    </div>
+
     <section class="gallery-block cards-gallery"> 
         <div class="container">
             <div class="heading">
@@ -20,12 +30,13 @@
                 <div class="card border-0 transform-on-hover">
                     <a class="lightbox">
                         <img 
-                            class="assassinIMG" 
-                            src= '<%= assassins.photo %>' 
-                            alt="Assassin's Image" 
-                            class="card-img-top"
+                        class="assassinIMG" 
+                        src= '<%= assassins.photo %>' 
+                        alt="Assassin's Image" 
+                        class="card-img-top"
                         >
                     </a>
+                    <a href="/assassinProfile/<%=assassins.assassins_id%>">
                     <div class="card-body">
                         <h5><%= assassins.full_name || 'Unknown'%></h5>
                         <h6><%= assassins.code_name || assassins.full_name%></h6>
@@ -55,6 +66,7 @@
         
                             </div>
                     </div>
+                    </a>
                 </div>
             </div>
             <% })%>

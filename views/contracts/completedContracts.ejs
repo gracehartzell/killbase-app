@@ -16,6 +16,15 @@
     <div class="container">
         <div class="heading">
             <h2>Completed Contracts</h2>
+            <h6>Total: 
+                <% let completeContracts = 0; %>
+                <% contracts.forEach(function(contracts) { %>
+                    <% if (contracts.completed === true) { %>
+                        <% completeContracts ++; %>
+                    <% } %>
+                <% }); %>
+                <%= completeContracts %>
+            </h6>
         </div>
 
         <div class="row">

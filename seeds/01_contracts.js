@@ -9,7 +9,8 @@ exports.seed = function(knex) {
                       target_photo: "https://goo.gl/LCquZj",
                       target_security: 3,
                       client_name: "Marcellus Wallace",
-                      budget: 40
+                      budget: 40,
+                      completed: false
                     },
                     {
                       target_name: "The Jaguar",
@@ -17,7 +18,8 @@ exports.seed = function(knex) {
                       target_photo: "https://goo.gl/6JWsiv",
                       target_security: 9,
                       client_name: "Concerto",
-                      budget: 70
+                      budget: 70,
+                      completed: false
                     },
                     {
                       target_name: "Norman Stansfield",
@@ -25,7 +27,8 @@ exports.seed = function(knex) {
                       target_photo: "https://i.imgur.com/mdIk33E.jpg",
                       target_security: 7,
                       client_name: "Mathilda",
-                      budget: 35
+                      budget: 35,
+                      completed: false
                     },
                     {
                       target_name: "Santino D'Antonio",
@@ -33,7 +36,8 @@ exports.seed = function(knex) {
                       target_photo: "https://goo.gl/fUPkYy",
                       target_security: 10,
                       client_name: "Winston",
-                      budget: 25
+                      budget: 25,
+                      completed: false
                     },
                     {
                       target_name: "Sonny Valerio",
@@ -41,7 +45,8 @@ exports.seed = function(knex) {
                       target_photo: "https://goo.gl/8DHYUS",
                       target_security: 4,
                       client_name: "Ray Vargo",
-                      budget: 10
+                      budget: 10,
+                      completed: false
                     }
             ])
         })

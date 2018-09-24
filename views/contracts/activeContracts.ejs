@@ -1,7 +1,6 @@
 <%- include('../partials/navbar') %>
 <title>Active Contracts</title>
 
-
 <body>
     <a href="/newContract"> 
         <button id="newButton">Create Contract</button>
@@ -18,16 +17,14 @@
         <div class="heading">
             <h2>Active Contracts</h2>
             <h6>Total: 
-                <% let activeContracts; %>
-                <% for (let i = 0; i < contracts.length; i++) { %>
+                <% let activeContracts = 0; %>
+                <% contracts.forEach(function(contracts) { %>
                     <% if (contracts.completed === false) { %>
-                         <% activeContracts++ %>
-                    <%  } %> 
-                    <%  return activeContracts; %>
-                    <% } %> 
-
+                        <% activeContracts ++; %>
+                    <% } %>
+                <% }); %>
                 <%= activeContracts %>
-                </h6>
+            </h6>
         </div>
 
         <div class="row">
