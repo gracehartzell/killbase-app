@@ -3,6 +3,7 @@ const router = express.Router();
 // const path = require('path');
 const knex = require('../db/knex');
 
+// GENERAL/BASE LEVEL
 router.get('/assassins', (req, res) => {
     knex('assassins')
     .then((assassins) => {
@@ -102,7 +103,7 @@ router.post('/assassins', (req, res, next) => {
       });
 });
 
-
+// EDIT/PATCH ASSASSIN
 router.get('/editAssassin/:assassins_id', function(req, res, next) {  
   knex('assassins').where('assassins_id',req.params.assassins_id).then((assassins)=>{
     if(!assassins) {
@@ -138,6 +139,7 @@ router.patch('/editAssassin/:assassins_id',(req,res, next)=>{
     })
 });  
 
+// DELETE ASSASSIN
 router.delete('/deleteAssassins/:assassins_id', (req, res, next) => {
   let row;
   knex('assassins')

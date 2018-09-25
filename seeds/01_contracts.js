@@ -48,6 +48,6 @@ exports.seed = function(knex) {
                       budget: 10,
                       completed: false
                     }
-            ])
-        })
-}
+            ]);
+        });
+};

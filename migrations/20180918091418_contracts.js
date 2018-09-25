@@ -8,7 +8,10 @@ exports.up = function(knex) {
       table.string('client_name');
       table.integer('budget');
       table.boolean('completed');
-    //   table.integer('Completed By').references('assassin_id').inTable('assassins').nullable();
+      table.string('completed_by');
+        // .references('assassin_id')
+        // .inTable('assassins')
+        // .nullable();
   });
 };
 

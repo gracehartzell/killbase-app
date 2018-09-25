@@ -3,6 +3,7 @@ const router = express.Router();
 // const path = require('path');
 const knex = require('../db/knex');
 
+// GENERAL/BASE LEVEL
 router.get('/contracts', (req, res) => {
     knex('contracts')
     .then((contracts) => {
@@ -91,7 +92,8 @@ router.patch('/editContract/:contract_id',(req,res, next)=>{
         target_security: req.body.target_security,
         client_name: req.body.client_name || 'Anonymous',
         budget: req.body.budget,
-        completed: req.body.completed}, '*')
+        completed: req.body.completed,
+        completed_by: req.body.completed_by}, '*')
     .where('contract_id',req.params.contract_id)
     .then(() => {
       res.redirect(302, '/contracts');
@@ -102,6 +104,7 @@ router.patch('/editContract/:contract_id',(req,res, next)=>{
     })
 });  
 
+// DELETE CONTRACTS
 router.delete('/deleteContract/:contract_id', (req, res, next) => {
   let row;
   knex('contracts')
@@ -125,6 +128,7 @@ router.delete('/deleteContract/:contract_id', (req, res, next) => {
     });
   });
 
+// COMPLETED
 router.get('/completedContracts', (req, res, next) => {
   knex('contracts')
     .orderBy('contract_id')
@@ -137,6 +141,7 @@ router.get('/completedContracts', (req, res, next) => {
     });
 });
 
+// ACTIVE
 router.get('/activeContracts', (req, res, next) => {
   knex('contracts')
     .orderBy('contract_id')
@@ -149,5 +154,6 @@ router.get('/activeContracts', (req, res, next) => {
     });
 });
 
-
+// JOINS
+router.get('/contractProfile/:contract_id')
 module.exports = router;
