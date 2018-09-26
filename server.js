@@ -3,7 +3,12 @@ const express = require('express');
 const favicon = require('serve-favicon');
 const path = require('path');
 const methodOverride = require('method-override');
-const port = process.env.PORT || 3000;
+
+const environment = process.env.NODE_ENV || 'development';
+const portOptions = {development: 8000, test: 6000};
+const defaultPort = portOptions[environment];
+const port = process.env.PORT || defaultPort;
+
 const knexPath = path.join(__dirname, 'knexfile.js');
 const app = express();
 
@@ -22,7 +27,7 @@ app.disable('x-powered-by');
 
 let assassins = require('./routes/assassins');
 app.use(assassins);
-const contracts = require('./routes/contracts');
+let contracts = require('./routes/contracts');
 app.use(contracts);
 
 app.get('/', (req, res) => {

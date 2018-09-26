@@ -13,8 +13,7 @@ production: {
 
 test: {
   client: 'pg',
-  connection: 'postgres://localhost/assassins_dev',
-  debug:true
+  connection: 'postgres://localhost/killbase_test'
   }
   
 };

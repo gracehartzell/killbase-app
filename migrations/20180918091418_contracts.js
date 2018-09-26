@@ -9,9 +9,6 @@ exports.up = function(knex) {
       table.integer('budget');
       table.boolean('completed');
       table.string('completed_by');
-        // .references('assassin_id')
-        // .inTable('assassins')
-        // .nullable();
   });
 };
 
