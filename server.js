@@ -11,8 +11,8 @@ const port = process.env.PORT || defaultPort;
 
 const knexPath = path.join(__dirname, 'knexfile.js');
 const app = express();
-
 const knex = require('./db/knex');
+
 app.use(methodOverride('_method'))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -29,6 +29,8 @@ let assassins = require('./routes/assassins');
 app.use(assassins);
 let contracts = require('./routes/contracts');
 app.use(contracts);
+let users = require('./routes/users');
+app.use(users);
 
 app.get('/', (req, res) => {
     res.render('index');
