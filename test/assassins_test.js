@@ -44,6 +44,7 @@ xdescribe('GET /assassins', () => {
 			.get('/assassins')
 			.expect('Content-Type', /text/)
 			.expect(200)
+			.end((err, res) => { console.log(res.text); done() } )
 	});
 });
 
@@ -53,13 +54,10 @@ describe('GET /assassins/:assassins_id', () => {
 			.get('/assassins/1')
 			.expect('Content-Type', 'text/html; charset=utf-8')
 			.expect(200)
-			.expect(/Boop/, () => {
-				throw new Error('THIS IS NOT OK');		
-				done();		
+			.end( (err, res) => { 
+				console.log(res.text); 
+				done(); 
 			})
-			// .end( (err, res) => { 
-			// 	done(); 
-			// })
 	});
 
 	xit('should throw error if assassins_id is null', done => {
